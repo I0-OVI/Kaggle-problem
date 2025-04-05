@@ -1,4 +1,4 @@
-###Initial preparation
+# Initial preparation
 This section aims to mention some problems you may meet when you deal with the data, especially the displayed issues.
 
 When you open the downloaded csv files, some garbled texts will be displayed due to the decoding issues of excel. There are two method to deal with this problem.
