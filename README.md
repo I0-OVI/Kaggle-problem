@@ -5,7 +5,7 @@ The data is provided in the website and clicking the data bottom can install the
 
 ### Contents
 
-- [Initial preparation](url)
+- [Initial preparation](/initial_preparation/initial_preparation.md)
 - [Filtering data](url)
 - Strengthening given data 
 - Prediction model
