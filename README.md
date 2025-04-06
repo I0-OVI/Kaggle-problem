@@ -5,7 +5,7 @@ The data is provided in the website and clicking the data bottom can download th
 
 ### Contents
 
-- [Initial preparation](/initial_preparation/initial_preparation.md)
+- [Initial preparation](/initial-preparation/initial-preparation.md)
 - [Filtering data](/Filtering-data/Filtering-data.md)
 - [Strengthening given data](/Strengthen-data/Strengthen-data.md)
 - Prediction model
