@@ -1,8 +1,4 @@
 import pandas as pd
-import os
-    # Set working directory
-new_path = "C:\\Users\\zhang\\Desktop\\kaggle_project"
-os.chdir(new_path)
 import chardet
 
 # Detect file encoding
