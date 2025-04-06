@@ -79,7 +79,7 @@ We have got the country names and their coordinates which enables us to train th
 
 Where as the whole program is too long, I put the program [here](/Strengthen-data/training.py) (Remember to install all the libraries before run the program)
 
-**Before you run the code**, there is a **curial thing** you need to know the whole process may take about **1 hour** in my own computer(CPU i9,GPU 4070). So I have uploaded the results stored in the [.pth file](\Strengthen-data\geo_location_model.pth) where I think storing all the weights of this model.
+**Before you run the code**, there is a **curial thing** you need to know the whole process may take about **1 hour** in my own computer(CPU i9,GPU 4070). So I have uploaded the results stored in the **.pth file** where I think storing all the weights of this model.
 
 As for the final step, the program is following:
 ```python
