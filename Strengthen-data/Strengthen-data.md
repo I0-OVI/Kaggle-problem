@@ -2,13 +2,13 @@
 Finishing two previous parts, it is followed by data augmentation, which means adding more columns to the original csv in order to have a more accurate prediction.
 
 ### Contents
-- Longitude and Altitude
+- [Longitude and Altitude](#section-1)
 - Monthly sales 
 - 
 
 
 
-### Longitude and Altitude
+### Longitude and Altitude<a id="section-1"></a>
 I initially questioned why this test included **shop_id.csv**, as knowing individual shop names seemed irrelevant. However, after learning about Russia's regional economic disparities, I realized shop locations could be a critical factor for our training of prediction model.
 
 To address this, my first instinct was to integrate a **mapping API**. The approach appeared straightforward: iterate through the file and process the search results. At first glance, it seemed simple enough. Yet when I implemented this, the output CSV was filled with NaN values. Except this, it took me 10 minutes to finish the whole process due to the limited accessing time of the API. Upon reflection, I recognized the core issue: shop names alone provide insufficient information for accurate geolocation. **This clearly demands a more robust methodology.**
@@ -79,7 +79,7 @@ We have got the country names and their coordinates which enables us to train th
 
 Where as the whole program is too long, I put the program [here](/Strengthen-data/training.py) (Remember to install all the libraries before run the program)
 
-**Before you run the code**, there is a **curial thing** you need to know the whole process may take about **1 hour** in my own computer(CPU i9,GPU 4070). So I have uploaded the results stored in the [.pth file](\Strengthen-data\geo_location_model.pth) where I think storing all the weights of this model.
+**Before you run the code**, there is a **curial thing** you need to know the whole process may take about **1 hour** in my own computer(CPU i9,GPU 4070). So I have uploaded the results stored in the **.pth file** where I think storing all the weights of this model.
 
 As for the final step, the program is following:
 ```python
