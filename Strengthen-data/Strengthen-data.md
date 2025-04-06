@@ -2,13 +2,13 @@
 Finishing two previous parts, it is followed by data augmentation, which means adding more columns to the original csv in order to have a more accurate prediction.
 
 ### Contents
-- Longitude and Altitude
+- [Longitude and Altitude](#section-1)
 - Monthly sales 
 - 
 
 
 
-### Longitude and Altitude
+### [Longitude and Altitude](<a id="section-1"></a> )
 I initially questioned why this test included **shop_id.csv**, as knowing individual shop names seemed irrelevant. However, after learning about Russia's regional economic disparities, I realized shop locations could be a critical factor for our training of prediction model.
 
 To address this, my first instinct was to integrate a **mapping API**. The approach appeared straightforward: iterate through the file and process the search results. At first glance, it seemed simple enough. Yet when I implemented this, the output CSV was filled with NaN values. Except this, it took me 10 minutes to finish the whole process due to the limited accessing time of the API. Upon reflection, I recognized the core issue: shop names alone provide insufficient information for accurate geolocation. **This clearly demands a more robust methodology.**
