@@ -7,7 +7,7 @@ The data is provided in the website and clicking the data bottom can download th
 
 - [Initial preparation](/initial_preparation/initial_preparation.md)
 - [Filtering data](/Filtering-data/Filtering-data.md)
-- [Strengthening given data](/Strengyhen-data/Strengyhen-data.md)
+- [Strengthening given data](/Strengthen-data/Strengthen-data.md)
 - Prediction model
 
 Click them and you can see the detailed information.
