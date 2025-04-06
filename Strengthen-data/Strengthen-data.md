@@ -65,7 +65,7 @@ data = {
 df_output = pd.DataFrame(data)
 df_output.to_csv("real_cities_with_coords.csv", index=False, encoding="utf-8")
 ```
-We have got the country names and their coordinates which enables us to train the model (normally Word2Vec、GloVe or transformer-based). The Deepseek chose the transformer-based one using the **torch** library. The whole progress of the training is following. Due to some encoding issues, I apply the [program](/Strengthen-data/filter-file.py) to get the rows containing only English-alphabet countries.
+We have got the country names and their coordinates which enables us to train the model (normally Word2Vec、GloVe or transformer-based). The Deepseek chose the transformer-based one using the **torch** library. The whole progress of the training is following. Due to some encoding issues, I applied the [program](/Strengthen-data/filter_file.py) to get the rows containing only English-alphabet countries.
 
 1. Address embedding extraction
 
