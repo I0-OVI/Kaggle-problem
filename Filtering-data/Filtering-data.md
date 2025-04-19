@@ -19,6 +19,6 @@ negative_cnt_rows.to_csv(output_file, index=False, columns=['row_number', 'date'
 ```
 I decided to remove the anomalous(the negative values) because it was few impact to the final prediction due to the large amount of data which had the daily precision recordings.
 
-The output_filtered.csv exceeds the recommended maximum size and does not be uploaded.
+The **output_filtered.csv** exceeds the recommended maximum size and does not be uploaded.
 
 Back to [Readme.md](/README.md)
