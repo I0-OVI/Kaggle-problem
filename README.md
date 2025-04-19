@@ -8,6 +8,6 @@ The data is provided in the website and clicking the data bottom can download th
 - [Initial preparation](/initial-preparation/initial-preparation.md)
 - [Filtering data](/Filtering-data/Filtering-data.md)
 - [Strengthening given data](/Strengthen-data/Strengthen-data.md)
-- Prediction model
+- [Prediction model](/Prediction/Prediction.md)
 
 Click them and you can see the detailed information.
