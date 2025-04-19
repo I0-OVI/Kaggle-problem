@@ -4,7 +4,6 @@ Finishing two previous parts, it is followed by data augmentation, which means a
 ### Contents
 - [Longitude and Altitude](#section-1)
 - [Monthly sales](#section-2) 
-- 
 
 
 
@@ -152,7 +151,47 @@ if __name__ == "__main__":
 ```
 ### Monthly sales <a id="section-2"></a>
 
+Since our target is to predict the values in column **item_cnt_month**, all the factors are no as good as the total quantity and total revenue. This part seems to be more straightforward: the only thing is to add all the number of item sold in each shop for each month.
+```python
+import pandas as pd
+import os
 
+# Set working directory
+new_path = "..."
+os.chdir(new_path)
+
+# Read CSV file
+df = pd.read_csv('output_filtered.csv')
+
+# Convert date format (day.month.year -> datetime)
+df['date'] = pd.to_datetime(df['date'], format='%d.%m.%Y')
+
+# Calculate single transaction revenue
+df['total_price'] = df['item_price'] * df['item_cnt_day']
+
+# Extract year-month in "YYYY-MM" format
+df['year_month'] = df['date'].dt.to_period('M').dt.strftime('%Y-%m')
+
+# Aggregate by month and shop
+# Calculate monthly revenue
+monthly_sales = df.groupby(['year_month', 'shop_id'])['total_price'].sum().reset_index()
+# Calculate monthly sales volume
+monthly_quantity = df.groupby(['year_month', 'shop_id'])['item_cnt_day'].sum().reset_index()
+
+# Merge revenue and volume metrics
+monthly_summary = pd.merge(
+    monthly_sales,  # Revenue data
+    monthly_quantity,  # Sales volume data
+    on=['year_month', 'shop_id'],  # Merge keys
+    how='inner'  # Inner join for data consistency
+)
+
+# Rename columns
+monthly_summary.columns = ['date', 'shop_id', 'total_price', 'total_quantity']
+
+# Export results
+monthly_summary.to_csv('monthly_summary.csv', index=False)
+```
 
 
 
