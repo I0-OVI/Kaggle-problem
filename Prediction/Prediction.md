@@ -62,7 +62,7 @@ test_2016[['predicted_price', 'predicted_quantity']] = preds
 test_2016[['shop_id', 'date', 'predicted_price', 'predicted_quantity']] \
     .to_csv('2016_predictions_clean.csv', index=False)
 ```
-If you are careful enough, the input file name is final_monthly_summary_with_coords_converted.csv which had the [date conversion](\Prediction\date_conversion.py) based on the final_monthly_summary_with_coords.csv combined by the month sales and coordinates of shop.
+If you are careful enough, the input file name is final_monthly_summary_with_coords_converted.csv which had the [date conversion](/Prediction/date_conversion.py) based on the final_monthly_summary_with_coords.csv combined by the month sales and coordinates of shop.
 This is because the feature engineering needs the specific format: Initially the date was like 'month.year'(eg: Jan.13) but the required format was 'year/month/day'. \
 Now, this part is temporarily finished. We can turn to the next part.
 
