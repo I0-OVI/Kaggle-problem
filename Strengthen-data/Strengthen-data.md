@@ -192,6 +192,4 @@ monthly_summary.columns = ['date', 'shop_id', 'total_price', 'total_quantity']
 # Export results
 monthly_summary.to_csv('monthly_summary.csv', index=False)
 ```
-
-
-
+Back to the [Readme file](/README.md)
