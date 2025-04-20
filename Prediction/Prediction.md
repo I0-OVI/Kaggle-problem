@@ -2,11 +2,11 @@
 
 To reach this stage, I was a little bit hazy about the proble: I did not remember which value should I predict or calculate for. 
 This was my order to finish the final part
-- Longitude and Latitude prediction
-- Individual item prediction
-- Combination
+- [Longitude and Latitude prediction](#section-1)
+- [Individual item prediction](#section-2)
+- [Combination](#section-3)
 
-  ### Longitude and Latitude prediction
+  ### Longitude and Latitude prediction <a id="section-1"></a>
   As I had mentioned before in the **strengthening data** part, there was a huge gap between the regions where shops located.
   This can be a good feature to predict the result.
   So, I used the **LightGBM** regression packeted with **MultiOutputRegressor**, actually recommanded by the AI.
@@ -66,7 +66,7 @@ If you are careful enough, the input file name is final_monthly_summary_with_coo
 This is because the feature engineering needs the specific format: Initially the date was like 'month.year'(eg: Jan.13) but the required format was 'year/month/day'. \
 Now, this part is temporarily finished. We can turn to the next part.
 
-### Individual item prediction
+### Individual item prediction <a id="section-2"></a>
 Actually, when I started to handle this section, there was confusion hold by me at that time: I literally did not know the target column.
 In fact, fear occupied my heart and suspicion about the usage of previous working was thought immediately. 
 I was uncertain about the avaliablity about the longitude and latitude prediction.
@@ -81,7 +81,7 @@ Until I opened a file called **test.csv**, I realized why the line criteria was 
 The score was not very high.(The score for the rank 1 person is about 0.75. I guess the score is to calculate variance bewteen values in the submitted file and the set-up file)
 ![](https://github.com/I0-OVI/Kaggle-problem/blob/main/Static/Image/submission-1.png?raw=true)
 
-### Combination
+### Combination <a id="section-3"></a>
 At first, I thought the score was too low because of the usage of many great algorithm. Once finding that many items had the average sale zero, I suspected about the filtering process which might drop the specific data of the items leading to the zero prediction. I used a testing program to locate the value of item sold by inputting the shop_id and item_id.
 ```python
 df = pd.read_csv('2016_item_forecast.csv')
