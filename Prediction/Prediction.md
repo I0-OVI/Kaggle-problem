@@ -192,4 +192,5 @@ print(final_result.head())
 Submit this version csv file, we got this score (huge improvement in the accuracy):
 ![](https://github.com/I0-OVI/Kaggle-problem/blob/main/Static/Image/submission-2.png?raw=true)
 As for the prediction for the row with empty given information, emmmmmm\
-**TO BE CONTINUE-->**
+**TO BE CONTINUE-->**\
+**AND THANK YOU FOR READING**
