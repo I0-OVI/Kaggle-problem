@@ -73,7 +73,7 @@ I was uncertain about the avaliablity about the longitude and latitude predictio
 By dropping the precious work, only depending on the file from the first part (filtering data), a very unreliable plan was appeared in my mind.
 
 Using data from 2013 to 2015, specifically at daily level, actually enabled me to generate a prediction whereas the amount exceeds the quality of data making the prediction reasonable to some extent.
-AI selected **random forest** as the training algorithm. The program is [here](\Prediction\item_prediction.py).
+AI selected **random forest** as the training algorithm. The program is [here](/Prediction/item_prediction.py).
 
 Here is an intersting vignette when I submitted this extremely unreliable prediction to the Kaggle website. He told me that 'Evaluation Exception: Submission must have 214200 rows'. 
 I was really confused about it, I had output all the quantities of items sold in the csv file but the total line number was much lower than the submission criteria.
