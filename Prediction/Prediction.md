@@ -64,7 +64,7 @@ test_2016[['shop_id', 'date', 'predicted_price', 'predicted_quantity']] \
 ```
 If you are careful enough, the input file name is final_monthly_summary_with_coords_converted.csv which had the [date conversion](\Prediction\date_conversion.py) based on the final_monthly_summary_with_coords.csv combined by the month sales and coordinates of shop.
 This is because the feature engineering needs the specific format: Initially the date was like 'month.year'(eg: Jan.13) but the required format was 'year/month/day'. \
-Now, this part is temporarily finished. We can turn to the next part .
+Now, this part is temporarily finished. We can turn to the next part.
 
 ### Individual item prediction
 Actually, when I started to handle this section, there was confusion hold by me at that time: I literally did not know the target column.
@@ -78,6 +78,26 @@ AI selected **random forest** as the training algorithm. The program is [here](\
 Here is an intersting vignette when I submitted this extremely unreliable prediction to the Kaggle website. He told me that 'Evaluation Exception: Submission must have 214200 rows'. 
 I was really confused about it, I had output all the quantities of items sold in the csv file but the total line number was much lower than the submission criteria.
 Until I opened a file called **test.csv**, I realized why the line criteria was so big: The ID column in the submission file was corresponded by item_id and shop_id.  \
-The score was not very high.
+The score was not very high.(The score for the rank 1 person is about 0.75. I guess the score is to calculate variance bewteen values in the submitted file and the set-up file)
+![私有图片](https://github.com/I0-OVI/Kaggle-problem/blob/main/Static/Image/submission-1.png?raw=true)
 
+### Combination
+At first, I thought the score was too low because of the usage of many great algorithm. Once finding that many items had the average sale zero, I suspected about the filtering process which might drop the specific data of the items leading to the zero prediction. I used a testing program to locate the value of item sold by inputting the shop_id and item_id.
+```python
+df = pd.read_csv('output_filtered.csv')
+def get_item_cnt(shop_id: int, item_id: int) -> float:
+    result = df[(df['shop_id'] == shop_id) & (df['item_id'] == item_id)]
+    return result['item_cnt'].values[0] if not result.empty else None
+if __name__ == "__main__":
+    # Query parameters input
+    for i in range(10):
+        query_shop_id = int(input("Enter shop_id: "))
+        query_item_id = int(input("Enter item_id: "))
 
+        # Execute query
+        cnt = get_item_cnt(query_shop_id, query_item_id)
+
+        # Output results
+        print(f"\nQuery result: {cnt if cnt is not None else 'No matching records found'}")
+```
+What really 
